@@ -4,7 +4,7 @@ A tool that tries to fix a PPTX/DOCX file when it cannot be read or fixed by pre
 
 The tool is built using Python3, and makes use of os,shutil and sys modules. It replaces all PPTX/DOCX files in the given directories with fixed versions of the same file.
 
-A. USING THE PYTHON FILE:
+## A. USING THE PYTHON FILE:
 
 The ways this program can be used:<br>
   1. Plain run from the shell:<br>
@@ -22,7 +22,16 @@ The ways this program can be used:<br>
 
 Note: The programs checks sys.stdin to receive input from the pipes. In cases where there is no piping, you might have to press the Enter key to make the program fix files instead of waiting for input in stdin.<br>
 
-B. USING THE FILE WITH NO EXTENSION:
+## B. USING THE FILE WITH NO EXTENSION:
 
-A symlink of the file can be added to /usr/bin and will run with the command <code>OXFix</code>.
+The file can be copied to /usr/bin and renamed to remove its extension, and can be used directly without typing "python ..".
+
+Alternatively, a symbolic link of the file can be added to /usr/bin and renamed to OXFix and will run with the command <code>OXFix</code>.
+
 The syntax is same as the python file syntax, just without python.
+
+Instructions to make a symbolic link:
+  Open a terminal in the same folder as the OXFix.py file.<br>
+  In the terminal, type <code>ln -s OXFix.py OXFix</code><br>
+  Copy the file to /usr/bin (might require privileges): <code>cp OXFix /usr/bin</code><br>
+  Delete the local symlink. <code>rm OXFix</code><br>
